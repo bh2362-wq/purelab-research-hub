@@ -4,6 +4,7 @@ import { FlaskConical, FileCheck2, Snowflake, Truck, ShieldCheck } from "lucide-
 import { products } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
 import { DisclaimerPill } from "@/components/Disclaimer";
+import { ResearchFloatingPill } from "@/components/ResearchFloatingPill";
 
 export const Route = createFileRoute("/product/$slug")({
   loader: ({ params }) => {
