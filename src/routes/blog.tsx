@@ -45,7 +45,7 @@ function Blog() {
     <section className="py-16">
       <div className="mx-auto max-w-6xl px-4">
         <p className="text-xs uppercase tracking-[0.2em] text-accent mb-2">Education Hub</p>
-        <h1 className="font-heading text-4xl md:text-5xl text-white">Research Library</h1>
+        <h1 className="font-heading text-4xl md:text-5xl text-foreground">Research Library</h1>
         <p className="text-slate-400 mt-3 max-w-2xl">Evidence-based guides for research professionals.</p>
 
         <div className="flex flex-wrap gap-2 mt-8">
@@ -55,8 +55,8 @@ function Blog() {
               onClick={() => setActive(c)}
               className={`px-4 py-2 rounded-full text-sm border transition ${
                 active === c
-                  ? "bg-accent text-[#0B1829] border-accent"
-                  : "border-white/10 text-slate-300 hover:border-accent/40 hover:text-accent"
+                  ? "bg-accent text-[#FFFFFF] border-accent"
+                  : "border-foreground/10 text-slate-300 hover:border-accent/40 hover:text-accent"
               }`}
             >
               {c}
@@ -66,17 +66,17 @@ function Blog() {
 
         {/* Featured */}
         {(active === "All" || active === featured.category) && (
-          <article className="mt-10 grid md:grid-cols-[1.1fr_1fr] gap-0 rounded-2xl overflow-hidden border border-white/10 bg-[#0E1B2D]">
-            <div className="relative aspect-[16/10] md:aspect-auto bg-gradient-to-br from-accent/20 via-[#0B1829] to-[#0B1829] flex items-center justify-center">
+          <article className="mt-10 grid md:grid-cols-[1.1fr_1fr] gap-0 rounded-2xl overflow-hidden border border-foreground/10 bg-[#F5F8FB]">
+            <div className="relative aspect-[16/10] md:aspect-auto bg-gradient-to-br from-accent/20 via-[#FFFFFF] to-[#FFFFFF] flex items-center justify-center">
               <BookOpen className="h-20 w-20 text-accent/70" />
-              <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs bg-accent text-[#0B1829] font-medium">Featured</span>
+              <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs bg-accent text-[#FFFFFF] font-medium">Featured</span>
             </div>
             <div className="p-8 flex flex-col">
               <div className="flex items-center gap-3 text-xs">
                 <span className="px-2.5 py-1 rounded-full bg-accent/10 text-accent">{featured.category}</span>
                 <span className="text-slate-500">{featured.readTime}</span>
               </div>
-              <h2 className="font-heading text-2xl md:text-3xl text-white mt-4 leading-tight">{featured.title}</h2>
+              <h2 className="font-heading text-2xl md:text-3xl text-foreground mt-4 leading-tight">{featured.title}</h2>
               <p className="text-slate-400 mt-3">{featured.excerpt}</p>
               <div className="mt-auto pt-6 flex items-center justify-between">
                 <p className="text-xs text-slate-500">{featured.author} · {featured.date}</p>
@@ -93,13 +93,13 @@ function Blog() {
           {filtered.map((p) => {
             const Icon = p.icon;
             return (
-              <article key={p.t} className="rounded-xl overflow-hidden border border-white/10 bg-[#0E1B2D] hover:border-accent/40 transition group">
-                <div className="aspect-[16/10] bg-gradient-to-br from-[#111E30] to-[#0B1829] flex items-center justify-center border-b border-white/5">
+              <article key={p.t} className="rounded-xl overflow-hidden border border-foreground/10 bg-[#F5F8FB] hover:border-accent/40 transition group">
+                <div className="aspect-[16/10] bg-gradient-to-br from-[#EAF1F7] to-[#FFFFFF] flex items-center justify-center border-b border-foreground/5">
                   <Icon className="h-12 w-12 text-accent/60 group-hover:text-accent transition" />
                 </div>
                 <div className="p-5">
                   <span className="px-2.5 py-1 rounded-full text-xs bg-accent/10 text-accent">{p.c}</span>
-                  <h3 className="font-heading text-lg text-white mt-3 leading-snug">{p.t}</h3>
+                  <h3 className="font-heading text-lg text-foreground mt-3 leading-snug">{p.t}</h3>
                   <p className="text-sm text-slate-400 mt-2">{p.d}</p>
                   <p className="text-xs text-slate-500 mt-4">{p.r} · {p.date}</p>
                 </div>
@@ -109,15 +109,15 @@ function Blog() {
         </div>
 
         {/* Newsletter */}
-        <div className="mt-14 rounded-2xl p-8 md:p-10 bg-gradient-to-r from-[#0E1B2D] via-[#0E1B2D] to-accent/10 border border-accent/20">
+        <div className="mt-14 rounded-2xl p-8 md:p-10 bg-gradient-to-r from-[#F5F8FB] via-[#F5F8FB] to-accent/10 border border-accent/20">
           <div className="grid md:grid-cols-[1.3fr_1fr] gap-6 items-center">
             <div>
-              <h3 className="font-heading text-2xl md:text-3xl text-white">Stay Updated with New Research Summaries</h3>
+              <h3 className="font-heading text-2xl md:text-3xl text-foreground">Stay Updated with New Research Summaries</h3>
               <p className="text-slate-400 mt-2 text-sm">No spam. Research updates only. Unsubscribe anytime.</p>
             </div>
             <div className="flex gap-2">
-              <input type="email" placeholder="you@institution.ac.uk" className="flex-1 bg-[#111E30] border border-white/10 focus:border-accent focus:outline-none text-white rounded-lg px-4 py-3 text-sm" />
-              <button className="px-5 py-3 rounded-lg bg-accent text-[#0B1829] font-medium hover:brightness-110 transition">Subscribe</button>
+              <input type="email" placeholder="you@institution.ac.uk" className="flex-1 bg-[#EAF1F7] border border-foreground/10 focus:border-accent focus:outline-none text-foreground rounded-lg px-4 py-3 text-sm" />
+              <button className="px-5 py-3 rounded-lg bg-accent text-[#FFFFFF] font-medium hover:brightness-110 transition">Subscribe</button>
             </div>
           </div>
         </div>

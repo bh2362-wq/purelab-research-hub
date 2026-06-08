@@ -9,8 +9,8 @@ export function DisclaimerPill() {
 
 export function ResearchBanner() {
   return (
-    <section className="border-y" style={{ background: "#1A1200", borderColor: "rgba(245,181,68,0.25)" }}>
-      <div className="mx-auto max-w-7xl px-4 py-6 text-sm leading-relaxed" style={{ color: "#F5B544" }}>
+    <section className="border-y" style={{ background: "#FFF8E6", borderColor: "rgba(180,83,9,0.25)" }}>
+      <div className="mx-auto max-w-7xl px-4 py-6 text-sm leading-relaxed" style={{ color: "#92400E" }}>
         <strong className="font-display">IMPORTANT:</strong>{" "}
         All products sold on PureLab Peptides are supplied strictly for in vitro laboratory research purposes.
         They are not licensed medicines, are not for human or veterinary use, and must not be used for any purpose

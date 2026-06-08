@@ -26,9 +26,9 @@ export function ReconstitutionCalculator() {
   const overflow = mlToAdd > vial;
 
   return (
-    <div className="relative rounded-2xl border border-accent/40 bg-[#0E1B2D] p-6 md:p-8 shadow-[0_0_60px_-20px_rgba(0,212,255,0.35)]">
+    <div className="relative rounded-2xl border border-accent/40 bg-[#F5F8FB] p-6 md:p-8 shadow-[0_0_60px_-20px_rgba(0,212,255,0.35)]">
       <FlaskConical className="absolute top-5 right-5 h-6 w-6 text-accent/60" />
-      <h3 className="font-heading text-2xl md:text-3xl text-white">Peptide Reconstitution Calculator</h3>
+      <h3 className="font-heading text-2xl md:text-3xl text-foreground">Peptide Reconstitution Calculator</h3>
       <p className="text-slate-400 mt-1 text-sm">
         Calculate the exact volume of bacteriostatic water needed to achieve your target concentration.
       </p>
@@ -82,7 +82,7 @@ export function ReconstitutionCalculator() {
   );
 }
 
-const inputCls = "w-full bg-[#111E30] border border-white/10 focus:border-accent focus:outline-none text-white rounded-lg px-3 py-2.5 text-sm";
+const inputCls = "w-full bg-[#EAF1F7] border border-foreground/10 focus:border-accent focus:outline-none text-foreground rounded-lg px-3 py-2.5 text-sm";
 
 function Field({ label, suffix, children }: { label: string; suffix: string; children: React.ReactNode }) {
   return (
@@ -97,7 +97,7 @@ function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <p className="text-xs uppercase tracking-wider text-slate-400">{label}</p>
-      <p className="font-heading text-2xl text-white mt-1">{value}</p>
+      <p className="font-heading text-2xl text-foreground mt-1">{value}</p>
     </div>
   );
 }

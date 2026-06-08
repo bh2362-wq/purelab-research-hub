@@ -59,13 +59,13 @@ function Shop() {
           <nav className="text-xs text-muted-foreground mb-4">
             <Link to="/" className="hover:text-accent">Home</Link>
             <span className="mx-2">›</span>
-            <span className="text-white">Shop</span>
+            <span className="text-foreground">Shop</span>
           </nav>
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-accent mb-2">Catalogue</p>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
                 Research Peptides UK <span className="text-muted-foreground font-normal text-2xl">(24 products)</span>
               </h1>
             </div>
@@ -74,7 +74,7 @@ function Shop() {
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortKey)}
-                className="rounded-lg bg-surface border border-white/10 px-3 py-2 text-white outline-none focus:border-accent text-sm"
+                className="rounded-lg bg-surface border border-foreground/10 px-3 py-2 text-foreground outline-none focus:border-accent text-sm"
               >
                 <option value="best">Best Selling</option>
                 <option value="price-asc">Price Low–High</option>
@@ -88,7 +88,7 @@ function Shop() {
             {/* Sidebar */}
             <aside className="lg:sticky lg:top-32 lg:self-start rounded-2xl border bg-surface p-5 h-fit">
               <div className="flex items-center justify-between mb-5">
-                <h2 className="font-display font-semibold text-white">Filter Results</h2>
+                <h2 className="font-display font-semibold text-foreground">Filter Results</h2>
                 <button onClick={clearFilters} className="text-xs text-accent hover:underline inline-flex items-center gap-1">
                   <X size={12} /> Clear
                 </button>
@@ -99,7 +99,7 @@ function Shop() {
                 <ul className="space-y-2.5">
                   {CATEGORIES.map((c) => (
                     <li key={c}>
-                      <label className="flex items-start gap-2.5 text-sm text-white/85 cursor-pointer hover:text-accent">
+                      <label className="flex items-start gap-2.5 text-sm text-foreground/85 cursor-pointer hover:text-accent">
                         <input
                           type="checkbox"
                           checked={selectedCats.includes(c)}
@@ -126,12 +126,12 @@ function Shop() {
                 />
                 <div className="mt-2 flex justify-between text-xs text-muted-foreground">
                   <span>£0</span>
-                  <span className="text-white">Up to £{maxPrice}</span>
+                  <span className="text-foreground">Up to £{maxPrice}</span>
                 </div>
               </div>
 
               <div>
-                <label className="flex items-center justify-between gap-3 text-sm text-white/85 cursor-pointer">
+                <label className="flex items-center justify-between gap-3 text-sm text-foreground/85 cursor-pointer">
                   <span>In Stock Only</span>
                   <span className={`relative inline-flex h-5 w-9 items-center rounded-full transition ${inStockOnly ? "bg-accent" : "bg-white/15"}`}>
                     <input
@@ -163,12 +163,12 @@ function Shop() {
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="text-sm text-muted-foreground">Showing 1–{filtered.length} of 24</p>
                 <div className="flex items-center gap-2">
-                  <button disabled className="inline-flex items-center gap-1 rounded-lg border px-3 py-2 text-sm text-white/40 cursor-not-allowed">
+                  <button disabled className="inline-flex items-center gap-1 rounded-lg border px-3 py-2 text-sm text-foreground/40 cursor-not-allowed">
                     <ChevronLeft size={14} /> Previous
                   </button>
                   <button className="w-9 h-9 rounded-lg bg-accent text-[var(--accent-foreground)] text-sm font-semibold">1</button>
-                  <button className="w-9 h-9 rounded-lg border text-sm text-white/80 hover:border-accent">2</button>
-                  <button className="inline-flex items-center gap-1 rounded-lg border px-3 py-2 text-sm text-white hover:border-accent">
+                  <button className="w-9 h-9 rounded-lg border text-sm text-foreground/80 hover:border-accent">2</button>
+                  <button className="inline-flex items-center gap-1 rounded-lg border px-3 py-2 text-sm text-foreground hover:border-accent">
                     Next <ChevronRight size={14} />
                   </button>
                 </div>

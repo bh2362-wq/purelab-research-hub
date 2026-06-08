@@ -88,7 +88,7 @@ function ProductPage() {
             <Link to="/shop" className="hover:text-accent">Shop</Link><span className="mx-2">›</span>
             <span className="hover:text-accent">{product.category.replace(" Research", "")}</span>
             <span className="mx-2">›</span>
-            <span className="text-white">{product.name}</span>
+            <span className="text-foreground">{product.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-14">
@@ -96,7 +96,7 @@ function ProductPage() {
             <div>
               <div
                 className="relative rounded-3xl border aspect-square flex items-center justify-center overflow-hidden"
-                style={{ background: "linear-gradient(160deg, #0F1B2C, #14253A)" }}
+                style={{ background: "linear-gradient(160deg, #F5F8FB, #E8EEF4)" }}
               >
                 <div className="absolute inset-0 hex-pattern opacity-40" />
                 <FlaskConical
@@ -116,7 +116,7 @@ function ProductPage() {
                 ))}
               </div>
               <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
-                <span className="text-xs text-muted-foreground">Batch: <span className="text-white">{batchRef}</span></span>
+                <span className="text-xs text-muted-foreground">Batch: <span className="text-foreground">{batchRef}</span></span>
                 <Link
                   to="/coas"
                   target="_blank"
@@ -132,14 +132,14 @@ function ProductPage() {
               <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-[11px] uppercase tracking-wider text-accent">
                 {product.category}
               </span>
-              <h1 className="mt-3 font-display font-bold text-white text-4xl lg:text-[36px] leading-tight">
+              <h1 className="mt-3 font-display font-bold text-foreground text-4xl lg:text-[36px] leading-tight">
                 {product.name}
               </h1>
               <p className="mt-1 text-muted-foreground">{chem.subname}</p>
 
               <div className="mt-5 flex items-baseline gap-3 flex-wrap">
                 <span className="text-4xl font-display font-bold text-accent leading-none">{product.purity}</span>
-                <span className="text-sm text-white/80">HPLC Verified</span>
+                <span className="text-sm text-foreground/80">HPLC Verified</span>
                 <Link to="/coas" className="text-sm text-accent hover:underline inline-flex items-center gap-1">
                   Independent CoA <ExternalLink size={12} />
                 </Link>
@@ -154,12 +154,12 @@ function ProductPage() {
                     <Star key={i} size={14} className={i <= 4 ? "fill-accent text-accent" : "text-accent"} />
                   ))}
                 </span>
-                <span className="text-white font-medium">4.8</span>/5
+                <span className="text-foreground font-medium">4.8</span>/5
                 <span>(32 reviews)</span>
               </button>
 
               <div className="mt-6 border-t pt-6">
-                <div className="text-4xl font-display font-bold text-white">£{selected.price.toFixed(2)}</div>
+                <div className="text-4xl font-display font-bold text-foreground">£{selected.price.toFixed(2)}</div>
 
                 <div className="mt-6">
                   <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">Size</div>
@@ -173,7 +173,7 @@ function ProductPage() {
                           className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm transition ${
                             active
                               ? "bg-accent text-[var(--accent-foreground)] border-accent font-semibold"
-                              : "text-white border-white/15 hover:border-accent/50"
+                              : "text-foreground border-foreground/15 hover:border-accent/50"
                           }`}
                         >
                           <span>{v.size}</span>
@@ -187,22 +187,22 @@ function ProductPage() {
 
                 <div className="mt-6 flex items-center gap-3">
                   <div className="inline-flex items-center rounded-xl border">
-                    <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="px-3.5 py-3 text-white hover:text-accent"><Minus size={14} /></button>
+                    <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="px-3.5 py-3 text-foreground hover:text-accent"><Minus size={14} /></button>
                     <input
                       type="number"
                       min={1}
                       value={qty}
                       onChange={(e) => setQty(Math.max(1, Number(e.target.value) || 1))}
-                      className="w-12 bg-transparent text-center text-white outline-none"
+                      className="w-12 bg-transparent text-center text-foreground outline-none"
                     />
-                    <button onClick={() => setQty((q) => q + 1)} className="px-3.5 py-3 text-white hover:text-accent"><Plus size={14} /></button>
+                    <button onClick={() => setQty((q) => q + 1)} className="px-3.5 py-3 text-foreground hover:text-accent"><Plus size={14} /></button>
                   </div>
                 </div>
 
                 <button
                   onClick={handleAdd}
                   className={`mt-4 w-full rounded-xl py-4 font-semibold text-base transition ${
-                    added ? "bg-success text-white" : "bg-accent hover:brightness-110"
+                    added ? "bg-success text-foreground" : "bg-accent hover:brightness-110"
                   }`}
                   style={added ? undefined : { color: "var(--accent-foreground)" }}
                 >
@@ -226,7 +226,7 @@ function ProductPage() {
                 ].map((x) => (
                   <div key={x.t} className="rounded-xl border bg-surface p-3 flex flex-col items-center gap-1 text-center">
                     <x.I size={18} className="text-accent" />
-                    <span className="text-white font-medium leading-tight">{x.t}</span>
+                    <span className="text-foreground font-medium leading-tight">{x.t}</span>
                     <span className="text-muted-foreground text-[10px]">{x.s}</span>
                   </div>
                 ))}
@@ -242,7 +242,7 @@ function ProductPage() {
                   key={t}
                   onClick={() => setTab(t)}
                   className={`px-4 py-3 text-sm whitespace-nowrap border-b-2 -mb-px transition ${
-                    tab === t ? "border-accent text-white font-semibold" : "border-transparent text-muted-foreground hover:text-white"
+                    tab === t ? "border-accent text-foreground font-semibold" : "border-transparent text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {t}
@@ -260,7 +260,7 @@ function ProductPage() {
 
           {/* RELATED */}
           <div className="mt-16">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Frequently Researched Together</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Frequently Researched Together</h2>
             <div className="flex gap-5 overflow-x-auto no-scrollbar pb-4 snap-x snap-mandatory">
               {related.map((p) => (
                 <div key={p.slug} className="min-w-[260px] sm:min-w-[300px] snap-start">
@@ -279,8 +279,8 @@ function ProductPage() {
 function DescriptionTab({ product, chem }: { product: Product; chem: Chem }) {
   return (
     <div className="grid lg:grid-cols-3 gap-10">
-      <div className="lg:col-span-2 space-y-4 text-white/85 leading-relaxed">
-        <h3 className="font-display font-semibold text-white text-xl">About {product.name} for Research</h3>
+      <div className="lg:col-span-2 space-y-4 text-foreground/85 leading-relaxed">
+        <h3 className="font-display font-semibold text-foreground text-xl">About {product.name} for Research</h3>
         <p>
           {product.name} (Body Protection Compound 157) is a synthetic pentadecapeptide composed of 15 amino acids.
           Derived from a protective protein sequence identified in gastric juice, it has been studied extensively in
@@ -302,7 +302,7 @@ function DescriptionTab({ product, chem }: { product: Product; chem: Chem }) {
           and document batch numbers in their experimental records to support reproducibility.
         </p>
 
-        <div className="mt-8 rounded-xl p-4 border" style={{ background: "#1A1200", borderColor: "rgba(245,181,68,0.3)", color: "#F5B544" }}>
+        <div className="mt-8 rounded-xl p-4 border" style={{ background: "#FFF8E6", borderColor: "rgba(245,181,68,0.3)", color: "#92400E" }}>
           <strong className="font-display">Research Disclaimer:</strong> This product is supplied strictly for in vitro
           laboratory research. It is not a licensed medicine, is not for human or veterinary use, and must not be
           administered to humans or animals.
@@ -321,14 +321,14 @@ function DescriptionTab({ product, chem }: { product: Product; chem: Chem }) {
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between gap-3 py-2.5">
                 <dt className="text-muted-foreground">{k}</dt>
-                <dd className="text-white text-right font-mono text-xs break-all">{v}</dd>
+                <dd className="text-foreground text-right font-mono text-xs break-all">{v}</dd>
               </div>
             ))}
           </dl>
         </div>
         <div className="rounded-2xl border bg-surface p-5">
           <h4 className="text-xs uppercase tracking-wider text-muted-foreground mb-3">Storage</h4>
-          <p className="text-sm text-white/85 leading-relaxed">
+          <p className="text-sm text-foreground/85 leading-relaxed">
             Store lyophilised at <span className="text-accent">-20°C</span>. Once reconstituted, refrigerate at
             <span className="text-accent"> 2–8°C</span> and use within <span className="text-accent">28 days</span>.
           </p>
@@ -374,7 +374,7 @@ function CoaTab({ batchRef, purity }: { batchRef: string; purity: string }) {
           <tbody className="divide-y divide-white/5">
             {rows.map((r) => (
               <tr key={r[0]}>
-                <td className="px-4 py-3 text-white">{r[0]}</td>
+                <td className="px-4 py-3 text-foreground">{r[0]}</td>
                 <td className="px-4 py-3 text-muted-foreground">{r[1]}</td>
                 <td className="px-4 py-3 text-success font-medium">{r[2]}</td>
                 <td className="px-4 py-3 text-muted-foreground">{r[3]}</td>
@@ -391,7 +391,7 @@ function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl border bg-surface px-4 py-3">
       <div className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</div>
-      <div className="mt-1 text-white font-medium">{value}</div>
+      <div className="mt-1 text-foreground font-medium">{value}</div>
     </div>
   );
 }
@@ -404,8 +404,8 @@ function ResearchTab({ name }: { name: string }) {
     "Seiwerth S et al. (2014). BPC 157 and standard angiogenic growth factors. Curr Pharm Des. PMID: 24345253.",
   ];
   return (
-    <div className="max-w-3xl space-y-4 text-white/85 leading-relaxed">
-      <h3 className="font-display font-semibold text-white text-xl">Key In Vitro &amp; Preclinical Findings</h3>
+    <div className="max-w-3xl space-y-4 text-foreground/85 leading-relaxed">
+      <h3 className="font-display font-semibold text-foreground text-xl">Key In Vitro &amp; Preclinical Findings</h3>
       <p>
         Across published preclinical literature, {name} has been characterised in models examining angiogenic
         signalling, collagen organisation, and gastrointestinal mucosal integrity. Reported observations include
@@ -417,7 +417,7 @@ function ResearchTab({ name }: { name: string }) {
         reconstitution method, and batch source — making batch-traceable supply important for reproducibility.
       </p>
 
-      <h4 className="font-display font-semibold text-white text-lg mt-8">References</h4>
+      <h4 className="font-display font-semibold text-foreground text-lg mt-8">References</h4>
       <ol className="space-y-2 text-sm text-muted-foreground list-decimal pl-5">
         {refs.map((r) => <li key={r}>{r}</li>)}
       </ol>
@@ -442,7 +442,7 @@ function ReviewsTab() {
   return (
     <div className="grid lg:grid-cols-3 gap-10">
       <aside className="rounded-2xl border bg-surface p-6 h-fit">
-        <div className="text-5xl font-display font-bold text-white">4.8<span className="text-2xl text-muted-foreground">/5</span></div>
+        <div className="text-5xl font-display font-bold text-foreground">4.8<span className="text-2xl text-muted-foreground">/5</span></div>
         <div className="flex mt-2">
           {[1, 2, 3, 4, 5].map((i) => (
             <Star key={i} size={16} className={i <= 4 ? "fill-accent text-accent" : "text-accent"} />
@@ -470,16 +470,16 @@ function ReviewsTab() {
           <article key={r.name} className="rounded-2xl border bg-surface p-5">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div>
-                <div className="text-white font-display font-semibold">{r.name}</div>
+                <div className="text-foreground font-display font-semibold">{r.name}</div>
                 <div className="text-xs text-muted-foreground">{r.role} · {r.date}</div>
               </div>
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={14} className={i <= r.stars ? "fill-accent text-accent" : "text-white/20"} />
+                  <Star key={i} size={14} className={i <= r.stars ? "fill-accent text-accent" : "text-foreground/20"} />
                 ))}
               </div>
             </div>
-            <p className="mt-3 text-sm text-white/85 leading-relaxed">{r.body}</p>
+            <p className="mt-3 text-sm text-foreground/85 leading-relaxed">{r.body}</p>
           </article>
         ))}
       </div>

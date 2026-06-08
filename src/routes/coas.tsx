@@ -55,7 +55,7 @@ function Coas() {
       <section className="py-14 lg:py-20 hex-pattern border-b">
         <div className="mx-auto max-w-7xl px-4">
           <p className="text-xs uppercase tracking-[0.2em] text-accent mb-2">Testing Archive</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white max-w-3xl leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground max-w-3xl leading-tight">
             Analytical Transparency. <span className="text-accent">Every Batch.</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-2xl">
@@ -87,7 +87,7 @@ function Coas() {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Search by product name or batch number..."
-                className="w-full rounded-xl border bg-surface pl-10 pr-4 py-3 text-white outline-none focus:border-accent text-sm"
+                className="w-full rounded-xl border bg-surface pl-10 pr-4 py-3 text-foreground outline-none focus:border-accent text-sm"
               />
             </div>
 
@@ -102,7 +102,7 @@ function Coas() {
                       className={`text-xs px-3.5 py-1.5 rounded-full border transition ${
                         active
                           ? "bg-accent text-[var(--accent-foreground)] border-accent font-semibold"
-                          : "text-white/80 border-white/15 hover:border-accent/50"
+                          : "text-foreground/80 border-foreground/15 hover:border-accent/50"
                       }`}
                     >
                       {p}
@@ -133,8 +133,8 @@ function Coas() {
                 <tbody className="divide-y divide-white/5">
                   {filtered.map((r) => (
                     <tr key={r.ref} className="hover:bg-white/[0.02]">
-                      <td className="px-4 py-3 font-mono text-white text-xs">{r.ref}</td>
-                      <td className="px-4 py-3 text-white">{r.product}</td>
+                      <td className="px-4 py-3 font-mono text-foreground text-xs">{r.ref}</td>
+                      <td className="px-4 py-3 text-foreground">{r.product}</td>
                       <td className="px-4 py-3 text-muted-foreground">{r.category}</td>
                       <td className="px-4 py-3 text-muted-foreground">{r.date}</td>
                       <td className="px-4 py-3">
@@ -149,7 +149,7 @@ function Coas() {
                         {r.endotoxin === "Pass" ? (
                           <span className="inline-flex items-center gap-1 text-success">Pass <Check size={12} /></span>
                         ) : (
-                          <span className="inline-flex items-center gap-1" style={{ color: "#F5B544" }}>N/A ⚠️</span>
+                          <span className="inline-flex items-center gap-1" style={{ color: "#92400E" }}>N/A ⚠️</span>
                         )}
                       </td>
                       <td className="px-4 py-3">
@@ -169,7 +169,7 @@ function Coas() {
 
           {/* Methodology */}
           <div className="mt-16">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Testing Methodology</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6">Testing Methodology</h2>
             <div className="grid md:grid-cols-3 gap-5">
               {[
                 { I: Beaker, t: "HPLC-UV Purity Testing", d: "Reverse-phase high performance liquid chromatography separates peptide constituents and a UV detector quantifies them — this is the industry standard for confirming a peptide's identity and purity at or above 99%." },
@@ -178,7 +178,7 @@ function Coas() {
               ].map((x) => (
                 <div key={x.t} className="rounded-2xl border bg-surface p-6">
                   <x.I size={26} className="text-accent mb-4" strokeWidth={1.5} />
-                  <h3 className="font-display font-semibold text-white text-lg mb-2">{x.t}</h3>
+                  <h3 className="font-display font-semibold text-foreground text-lg mb-2">{x.t}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{x.d}</p>
                 </div>
               ))}

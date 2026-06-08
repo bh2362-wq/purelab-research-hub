@@ -40,7 +40,7 @@ function Checkout() {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/15 text-success mb-4">
           <Check size={32} />
         </div>
-        <h1 className="text-4xl font-bold text-white">Order received</h1>
+        <h1 className="text-4xl font-bold text-foreground">Order received</h1>
         <p className="mt-3 text-muted-foreground max-w-md mx-auto">
           A confirmation has been emailed. Dispatch from our UK lab same-day before 2PM.
         </p>
@@ -63,7 +63,7 @@ function Checkout() {
   if (items.length === 0) {
     return (
       <section className="py-24 text-center px-4">
-        <h1 className="text-3xl font-bold text-white">Your cart is empty</h1>
+        <h1 className="text-3xl font-bold text-foreground">Your cart is empty</h1>
         <Link to="/shop" className="mt-6 inline-flex rounded-xl bg-accent px-6 py-3 font-semibold" style={{ color: "var(--accent-foreground)" }}>
           Browse Catalogue
         </Link>
@@ -74,14 +74,14 @@ function Checkout() {
   return (
     <section className="py-12 lg:py-16">
       <div className="mx-auto max-w-7xl px-4">
-        <h1 className="text-3xl sm:text-4xl font-bold text-white mb-8">Checkout</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-8">Checkout</h1>
         <div className="grid lg:grid-cols-[3fr_2fr] gap-8">
           {/* LEFT: form */}
           <div className="space-y-6">
             {/* Contact */}
             <Section step="1" title="Contact">
               <Field label="Email address" type="email" placeholder="researcher@lab.ac.uk" />
-              <label className="mt-4 flex items-center gap-2 text-sm text-white/85 cursor-pointer">
+              <label className="mt-4 flex items-center gap-2 text-sm text-foreground/85 cursor-pointer">
                 <input type="checkbox" className="accent-[var(--color-accent)]" />
                 Create an account for faster checkout next time
               </label>
@@ -115,17 +115,17 @@ function Checkout() {
                       disabled={disabled}
                       onClick={() => setShipKey(s.key)}
                       className={`w-full text-left rounded-xl border p-4 flex items-center gap-4 transition ${
-                        active ? "border-accent bg-accent/5" : "border-white/10 hover:border-white/25"
+                        active ? "border-accent bg-accent/5" : "border-foreground/10 hover:border-foreground/25"
                       } ${disabled ? "opacity-40 cursor-not-allowed" : ""}`}
                     >
-                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${active ? "border-accent" : "border-white/30"}`}>
+                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${active ? "border-accent" : "border-foreground/30"}`}>
                         {active && <span className="w-2 h-2 rounded-full bg-accent" />}
                       </span>
                       <div className="flex-1">
-                        <div className="text-white font-medium">{s.name}</div>
+                        <div className="text-foreground font-medium">{s.name}</div>
                         <div className="text-xs text-muted-foreground">{s.eta}</div>
                       </div>
-                      <div className="font-display font-semibold text-white">{s.price === 0 ? "Free" : `£${s.price.toFixed(2)}`}</div>
+                      <div className="font-display font-semibold text-foreground">{s.price === 0 ? "Free" : `£${s.price.toFixed(2)}`}</div>
                     </button>
                   );
                 })}
@@ -164,18 +164,18 @@ function Checkout() {
 
           {/* RIGHT: summary */}
           <aside className="rounded-2xl border bg-surface p-6 h-fit lg:sticky lg:top-32">
-            <h2 className="font-display font-semibold text-white text-lg mb-5">Order Summary</h2>
+            <h2 className="font-display font-semibold text-foreground text-lg mb-5">Order Summary</h2>
             <ul className="space-y-3 mb-5 max-h-72 overflow-y-auto pr-1">
               {items.map(({ product, qty }) => (
                 <li key={`co-${product.slug}-${product.size}`} className="flex gap-3 items-center">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ background: "#14253A" }}>
+                  <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ background: "#E8EEF4" }}>
                     <FlaskConical size={20} className="text-accent" />
                   </div>
                   <div className="flex-1 min-w-0 text-sm">
-                    <div className="text-white truncate">{product.name} {product.size}</div>
+                    <div className="text-foreground truncate">{product.name} {product.size}</div>
                     <div className="text-xs text-muted-foreground">Qty {qty} · £{product.price.toFixed(2)}</div>
                   </div>
-                  <div className="text-white font-medium text-sm">£{(product.price * qty).toFixed(2)}</div>
+                  <div className="text-foreground font-medium text-sm">£{(product.price * qty).toFixed(2)}</div>
                 </li>
               ))}
             </ul>
@@ -190,7 +190,7 @@ function Checkout() {
               </button>
               {showDiscount && (
                 <div className="mt-3 flex gap-2">
-                  <input className="flex-1 rounded-lg bg-background border px-3 py-2 text-sm text-white outline-none focus:border-accent" placeholder="Enter code" />
+                  <input className="flex-1 rounded-lg bg-background border px-3 py-2 text-sm text-foreground outline-none focus:border-accent" placeholder="Enter code" />
                   <button className="rounded-lg border border-accent/40 text-accent px-3 py-2 text-sm hover:bg-accent/10">Apply</button>
                 </div>
               )}
@@ -204,8 +204,8 @@ function Checkout() {
               </div>
               <div className="flex justify-between text-muted-foreground"><dt>VAT (20%)</dt><dd>£{vat.toFixed(2)}</dd></div>
               <div className="border-t pt-3 flex justify-between items-baseline">
-                <dt className="text-white font-semibold">Order Total</dt>
-                <dd className="text-white font-display font-bold text-2xl">£{total.toFixed(2)}</dd>
+                <dt className="text-foreground font-semibold">Order Total</dt>
+                <dd className="text-foreground font-display font-bold text-2xl">£{total.toFixed(2)}</dd>
               </div>
             </dl>
 
@@ -222,7 +222,7 @@ function Checkout() {
 function Section({ step, title, children }: { step: string; title: string; children: React.ReactNode }) {
   return (
     <section className="rounded-2xl border bg-surface p-6">
-      <h2 className="font-display font-semibold text-white text-lg mb-5 flex items-center gap-3">
+      <h2 className="font-display font-semibold text-foreground text-lg mb-5 flex items-center gap-3">
         <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-accent/15 text-accent text-sm">{step}</span>
         {title}
       </h2>
@@ -240,8 +240,8 @@ function Field({ label, optional, className = "", ...rest }: { label: string; op
       </span>
       <input
         {...rest}
-        className="w-full rounded-lg border px-3 py-2.5 text-white outline-none focus:border-accent transition"
-        style={{ background: "#0E1B2D" }}
+        className="w-full rounded-lg border px-3 py-2.5 text-foreground outline-none focus:border-accent transition"
+        style={{ background: "#F5F8FB" }}
       />
     </label>
   );
@@ -252,8 +252,8 @@ function SelectField({ label, options }: { label: string; options: string[] }) {
     <label className="block">
       <span className="block text-xs uppercase tracking-wider text-muted-foreground mb-1.5">{label}</span>
       <select
-        className="w-full rounded-lg border px-3 py-2.5 text-white outline-none focus:border-accent transition"
-        style={{ background: "#0E1B2D" }}
+        className="w-full rounded-lg border px-3 py-2.5 text-foreground outline-none focus:border-accent transition"
+        style={{ background: "#F5F8FB" }}
         defaultValue={options[0]}
       >
         {options.map((o) => <option key={o} value={o}>{o}</option>)}
@@ -264,7 +264,7 @@ function SelectField({ label, options }: { label: string; options: string[] }) {
 
 function CardBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center justify-center rounded-md border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold tracking-wider text-white/80">
+    <span className="inline-flex items-center justify-center rounded-md border border-foreground/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold tracking-wider text-foreground/80">
       {label}
     </span>
   );
@@ -274,14 +274,14 @@ function ComplianceGate({ onConfirm, onCancel }: { onConfirm: () => void; onCanc
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/70 backdrop-blur-sm">
       <div className="max-w-lg w-full rounded-2xl border bg-surface p-7 shadow-2xl" style={{ borderColor: "rgba(245,181,68,0.3)" }}>
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4" style={{ background: "rgba(245,181,68,0.15)", color: "#F5B544" }}>
+        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4" style={{ background: "rgba(245,181,68,0.15)", color: "#92400E" }}>
           <ShieldAlert size={22} />
         </div>
-        <h2 className="font-display font-bold text-white text-2xl">Research Use Confirmation</h2>
+        <h2 className="font-display font-bold text-foreground text-2xl">Research Use Confirmation</h2>
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
           Before proceeding, please confirm:
         </p>
-        <ul className="mt-3 space-y-2 text-sm text-white/85">
+        <ul className="mt-3 space-y-2 text-sm text-foreground/85">
           <li className="flex gap-2"><Check size={16} className="text-accent mt-0.5 shrink-0" /> I am a qualified researcher.</li>
           <li className="flex gap-2"><Check size={16} className="text-accent mt-0.5 shrink-0" /> These products will be used solely for in vitro scientific research.</li>
           <li className="flex gap-2"><Check size={16} className="text-accent mt-0.5 shrink-0" /> I am not purchasing for personal use, human administration, or veterinary use.</li>
@@ -296,7 +296,7 @@ function ComplianceGate({ onConfirm, onCancel }: { onConfirm: () => void; onCanc
           </button>
           <button
             onClick={onCancel}
-            className="flex-1 rounded-xl border border-white/25 text-white py-3 font-semibold hover:bg-white/5 transition"
+            className="flex-1 rounded-xl border border-foreground/25 text-foreground py-3 font-semibold hover:bg-white/5 transition"
           >
             Cancel
           </button>

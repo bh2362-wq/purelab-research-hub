@@ -18,7 +18,7 @@ export function Vial() {
         <rect x="64" y="38" width="72" height="14" rx="2" fill="#243A56" />
         <rect x="60" y="50" width="80" height="10" rx="2" fill="#00D4FF" opacity="0.85" />
         {/* body */}
-        <rect x="55" y="60" width="90" height="240" rx="10" fill="url(#glass)" opacity="0.18" stroke="rgba(255,255,255,0.35)" />
+        <rect x="55" y="60" width="90" height="240" rx="10" fill="url(#glass)" opacity="0.45" stroke="rgba(11,24,41,0.18)" />
         {/* liquid */}
         <rect x="60" y="180" width="80" height="115" rx="6" fill="url(#liquid)" />
         {/* label */}

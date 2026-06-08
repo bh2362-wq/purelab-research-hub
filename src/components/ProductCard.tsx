@@ -17,9 +17,9 @@ export function ProductCard({ product }: { product: Product }) {
         to="/product/$slug"
         params={{ slug: product.slug }}
         className="relative aspect-square flex items-center justify-center"
-        style={{ background: "linear-gradient(160deg, #0F1B2C, #14253A)" }}
+        style={{ background: "linear-gradient(160deg, #F5F8FB, #E8EEF4)" }}
       >
-        <span className="absolute top-3 left-3 z-10 inline-flex items-center rounded-full bg-black/40 backdrop-blur border border-white/10 text-[10px] uppercase tracking-wider text-accent px-2.5 py-1">
+        <span className="absolute top-3 left-3 z-10 inline-flex items-center rounded-full bg-white/70 backdrop-blur border border-border text-[10px] uppercase tracking-wider text-accent px-2.5 py-1">
           {product.category.replace(" Research", "")}
         </span>
         <FlaskConical size={88} className="text-accent/70 group-hover:scale-105 transition-transform" strokeWidth={1.25} />
@@ -29,7 +29,7 @@ export function ProductCard({ product }: { product: Product }) {
         <Link
           to="/product/$slug"
           params={{ slug: product.slug }}
-          className="font-display font-bold text-white hover:text-accent leading-tight"
+          className="font-display font-bold text-foreground hover:text-accent leading-tight"
         >
           {product.name} {selected.size}
         </Link>
@@ -62,7 +62,7 @@ export function ProductCard({ product }: { product: Product }) {
                   className={`text-[11px] px-2.5 py-1 rounded-md border transition ${
                     active
                       ? "bg-accent text-[var(--accent-foreground)] border-accent"
-                      : "text-white/80 border-white/15 hover:border-accent/50"
+                      : "text-foreground/80 border-border hover:border-accent/50"
                   }`}
                 >
                   {s.size}
@@ -73,7 +73,7 @@ export function ProductCard({ product }: { product: Product }) {
         )}
 
         <div className="mt-2 flex items-baseline gap-2">
-          <span className="text-2xl font-display font-bold text-white">£{selected.price.toFixed(2)}</span>
+          <span className="text-2xl font-display font-bold text-foreground">£{selected.price.toFixed(2)}</span>
           {product.originalPrice && (
             <span className="text-sm text-muted-foreground line-through">£{product.originalPrice.toFixed(2)}</span>
           )}
@@ -91,7 +91,7 @@ export function ProductCard({ product }: { product: Product }) {
             onClick={() => setWished((v) => !v)}
             aria-label="Wishlist"
             className={`p-2.5 rounded-lg border transition ${
-              wished ? "border-danger text-danger" : "border-white/15 text-white/70 hover:text-accent hover:border-accent/50"
+              wished ? "border-danger text-danger" : "border-border text-foreground/70 hover:text-accent hover:border-accent/50"
             }`}
           >
             <Heart size={16} fill={wished ? "currentColor" : "none"} />

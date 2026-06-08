@@ -20,7 +20,7 @@ function Cart() {
     <section className="py-12 lg:py-16">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-8 flex items-end justify-between flex-wrap gap-3">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground">
             Your Cart <span className="text-muted-foreground font-normal text-xl">({itemCount} {itemCount === 1 ? "item" : "items"})</span>
           </h1>
           <Link to="/shop" className="text-sm text-accent hover:underline inline-flex items-center gap-1">
@@ -33,7 +33,7 @@ function Cart() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-4">
               <FlaskConical size={28} />
             </div>
-            <h2 className="text-xl font-display font-semibold text-white">Your cart is empty</h2>
+            <h2 className="text-xl font-display font-semibold text-foreground">Your cart is empty</h2>
             <p className="mt-2 text-muted-foreground">Browse our verified research catalogue to get started.</p>
             <Link to="/shop" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-semibold" style={{ color: "var(--accent-foreground)" }}>
               Browse Catalogue <ArrowRight size={16} />
@@ -50,7 +50,7 @@ function Cart() {
                       to="/product/$slug"
                       params={{ slug: product.slug }}
                       className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ background: "linear-gradient(160deg, #0F1B2C, #14253A)" }}
+                      style={{ background: "linear-gradient(160deg, #F5F8FB, #E8EEF4)" }}
                     >
                       <FlaskConical className="text-accent" size={36} strokeWidth={1.25} />
                     </Link>
@@ -58,25 +58,25 @@ function Cart() {
                     <div className="flex-1 min-w-0">
                       <div className="flex justify-between gap-3 items-start flex-wrap">
                         <div>
-                          <Link to="/product/$slug" params={{ slug: product.slug }} className="font-display font-semibold text-white hover:text-accent">
+                          <Link to="/product/$slug" params={{ slug: product.slug }} className="font-display font-semibold text-foreground hover:text-accent">
                             {product.name} — {product.size}
                           </Link>
-                          <div className="mt-1 text-xs text-muted-foreground">Batch: <span className="text-white/85">{product.batch}</span></div>
+                          <div className="mt-1 text-xs text-muted-foreground">Batch: <span className="text-foreground/85">{product.batch}</span></div>
                           <span className="mt-2 inline-flex items-center gap-1 rounded-full bg-success/10 text-success text-[11px] font-medium px-2.5 py-1 border border-success/20">
                             ✓ {product.purity}
                           </span>
                         </div>
                         <div className="text-right">
-                          <div className="font-display font-bold text-white text-lg">£{lineTotal.toFixed(2)}</div>
+                          <div className="font-display font-bold text-foreground text-lg">£{lineTotal.toFixed(2)}</div>
                           <div className="text-xs text-muted-foreground">£{product.price.toFixed(2)} ea</div>
                         </div>
                       </div>
 
                       <div className="mt-3 flex items-center justify-between gap-3 flex-wrap">
                         <div className="inline-flex items-center rounded-lg border">
-                          <button onClick={() => updateQty(product.slug, qty - 1)} className="px-2.5 py-1.5 text-white hover:text-accent"><Minus size={14} /></button>
-                          <span className="w-9 text-center text-white text-sm">{qty}</span>
-                          <button onClick={() => updateQty(product.slug, qty + 1)} className="px-2.5 py-1.5 text-white hover:text-accent"><Plus size={14} /></button>
+                          <button onClick={() => updateQty(product.slug, qty - 1)} className="px-2.5 py-1.5 text-foreground hover:text-accent"><Minus size={14} /></button>
+                          <span className="w-9 text-center text-foreground text-sm">{qty}</span>
+                          <button onClick={() => updateQty(product.slug, qty + 1)} className="px-2.5 py-1.5 text-foreground hover:text-accent"><Plus size={14} /></button>
                         </div>
                         <button onClick={() => removeItem(product.slug)} className="text-muted-foreground hover:text-danger inline-flex items-center gap-1.5 text-sm">
                           <Trash2 size={14} /> Remove
@@ -87,7 +87,7 @@ function Cart() {
                 );
               })}
 
-              <div className="rounded-xl p-4 border text-sm leading-relaxed" style={{ background: "#1A1200", borderColor: "rgba(245,181,68,0.3)", color: "#F5B544" }}>
+              <div className="rounded-xl p-4 border text-sm leading-relaxed" style={{ background: "#FFF8E6", borderColor: "rgba(245,181,68,0.3)", color: "#92400E" }}>
                 <strong className="font-display">Research Use Only:</strong> By proceeding to checkout you confirm that you are a professional
                 researcher and that these products will be used exclusively for in vitro scientific research. These are not
                 medicines and are not for human use.
@@ -95,15 +95,15 @@ function Cart() {
             </div>
 
             <aside className="rounded-2xl border bg-surface p-6 h-fit lg:sticky lg:top-32">
-              <h2 className="font-display font-semibold text-white text-lg mb-5">Order Summary</h2>
+              <h2 className="font-display font-semibold text-foreground text-lg mb-5">Order Summary</h2>
 
               <ul className="divide-y divide-white/5 text-sm mb-4 max-h-48 overflow-y-auto pr-1">
                 {items.map(({ product, qty }) => (
                   <li key={`s-${product.slug}-${product.size}`} className="flex justify-between gap-3 py-2.5">
-                    <span className="text-white/85 truncate">
+                    <span className="text-foreground/85 truncate">
                       {product.name} {product.size} <span className="text-muted-foreground">× {qty}</span>
                     </span>
-                    <span className="text-white whitespace-nowrap">£{(product.price * qty).toFixed(2)}</span>
+                    <span className="text-foreground whitespace-nowrap">£{(product.price * qty).toFixed(2)}</span>
                   </li>
                 ))}
               </ul>
@@ -116,8 +116,8 @@ function Cart() {
                 </div>
                 <div className="flex justify-between text-muted-foreground"><dt>VAT (20%)</dt><dd>£{vat.toFixed(2)}</dd></div>
                 <div className="border-t pt-3 flex justify-between items-baseline">
-                  <dt className="text-white font-semibold">Order Total</dt>
-                  <dd className="text-white font-display font-bold text-2xl">£{total.toFixed(2)}</dd>
+                  <dt className="text-foreground font-semibold">Order Total</dt>
+                  <dd className="text-foreground font-display font-bold text-2xl">£{total.toFixed(2)}</dd>
                 </div>
               </dl>
 

@@ -48,7 +48,7 @@ function Faq() {
     <section className="py-14 lg:py-20">
       <div className="mx-auto max-w-3xl px-4">
         <p className="text-xs uppercase tracking-[0.2em] text-accent mb-2">FAQ</p>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">Frequently Asked Questions</h1>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">Frequently Asked Questions</h1>
         <p className="mt-5 text-lg text-muted-foreground">
           Practical answers about ordering, peptide testing, and UK research compliance.
         </p>
@@ -56,7 +56,7 @@ function Faq() {
         <div className="mt-12 space-y-12">
           {groups.map((g) => (
             <div key={g.title}>
-              <h2 className="font-display font-semibold text-white text-sm uppercase tracking-[0.2em] text-accent mb-4">{g.title}</h2>
+              <h2 className="font-display font-semibold text-foreground text-sm uppercase tracking-[0.2em] text-accent mb-4">{g.title}</h2>
               <div className="space-y-3">
                 {g.items.map((item) => <AccordionItem key={item.q} {...item} />)}
               </div>
@@ -65,7 +65,7 @@ function Faq() {
         </div>
 
         <div className="mt-16 rounded-2xl border bg-surface p-6 text-center">
-          <h3 className="font-display font-semibold text-white text-lg">Still have a question?</h3>
+          <h3 className="font-display font-semibold text-foreground text-lg">Still have a question?</h3>
           <p className="mt-2 text-sm text-muted-foreground">Reach our research team for technical or compliance enquiries.</p>
           <a href="mailto:research@purelabpeptides.co.uk" className="mt-4 inline-flex rounded-xl bg-accent px-6 py-3 font-semibold" style={{ color: "var(--accent-foreground)" }}>
             research@purelabpeptides.co.uk
@@ -84,7 +84,7 @@ function AccordionItem({ q, a }: Q) {
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between gap-4 p-5 text-left"
       >
-        <span className="font-display font-semibold text-white">{q}</span>
+        <span className="font-display font-semibold text-foreground">{q}</span>
         <ChevronDown
           size={18}
           className={`text-accent shrink-0 transition-transform ${open ? "rotate-180" : ""}`}

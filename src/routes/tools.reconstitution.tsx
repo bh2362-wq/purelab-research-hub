@@ -22,7 +22,7 @@ function ToolPage() {
           <ArrowLeft className="h-4 w-4" /> Back to Research Library
         </Link>
         <p className="text-xs uppercase tracking-[0.2em] text-accent mb-2">Research Tools</p>
-        <h1 className="font-heading text-4xl text-white mb-8">Reconstitution Calculator</h1>
+        <h1 className="font-heading text-4xl text-foreground mb-8">Reconstitution Calculator</h1>
         <ReconstitutionCalculator />
       </div>
     </section>
