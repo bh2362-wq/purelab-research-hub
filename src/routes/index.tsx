@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const catIcons: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const catIcons: Record<string, typeof FlaskConical> = {
   flask: FlaskConical, shield: ShieldCheck, brain: Brain, sun: Sun, atom: Atom, zap: Zap,
 };
 
