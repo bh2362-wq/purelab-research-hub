@@ -4,7 +4,7 @@ import {
   FlaskConical, FileCheck2, Snowflake, Truck, Microscope,
   Star, Check, Heart, ExternalLink, Download, Minus, Plus,
 } from "lucide-react";
-import { products, type Product } from "@/lib/products";
+import { products, type Product, type SizeVariant } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
 import { ProductCard } from "@/components/ProductCard";
 import { ResearchFloatingPill } from "@/components/ResearchFloatingPill";
@@ -56,8 +56,8 @@ function ProductPage() {
   const { addItem } = useCart();
   const chem = chemistry[product.slug] ?? fallbackChem(product);
 
-  const variants = product.sizes ?? [{ size: product.size, price: product.price }];
-  const [selected, setSelected] = useState(
+  const variants: SizeVariant[] = product.sizes ?? [{ size: product.size, price: product.price }];
+  const [selected, setSelected] = useState<SizeVariant>(
     variants.find((v) => v.size === product.size) ?? variants[0]
   );
   const [qty, setQty] = useState(1);
