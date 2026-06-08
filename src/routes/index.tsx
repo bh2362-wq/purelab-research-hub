@@ -28,7 +28,7 @@ function Home() {
         <div className="mx-auto max-w-7xl px-4 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-xs text-accent mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> UK Lab · Janoshik Verified
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" /> UK Lab · Janoshik Verified
             </div>
             <h1 className="font-display font-bold text-white leading-[1.05] text-5xl sm:text-6xl lg:text-[72px]">
               Research Peptides.

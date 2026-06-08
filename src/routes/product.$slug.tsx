@@ -102,7 +102,7 @@ function ProductPage() {
                 <FlaskConical
                   size={240}
                   strokeWidth={1.1}
-                  className="relative z-10 text-accent/80 animate-vial drop-shadow-[0_30px_60px_rgba(0,212,255,0.35)]"
+                  className="relative z-10 text-accent/80 drop-shadow-[0_30px_60px_rgba(0,212,255,0.35)]"
                 />
               </div>
               <div className="mt-3 grid grid-cols-3 gap-3">

@@ -60,14 +60,6 @@
   background-size: auto, auto, 60px 52px;
 }
 
-@keyframes vial-float {
-  0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-18px) rotate(-4deg); }
-}
-@utility animate-vial {
-  animation: vial-float 5s ease-in-out infinite;
-}
-
 @utility no-scrollbar {
   scrollbar-width: none;
   &::-webkit-scrollbar { display: none; }

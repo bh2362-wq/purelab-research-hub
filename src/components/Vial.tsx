@@ -1,6 +1,6 @@
 export function Vial() {
   return (
-    <div className="relative w-full max-w-sm mx-auto animate-vial">
+    <div className="relative w-full max-w-sm mx-auto">
       <svg viewBox="0 0 200 320" className="w-full drop-shadow-[0_25px_50px_rgba(0,212,255,0.25)]">
         <defs>
           <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
