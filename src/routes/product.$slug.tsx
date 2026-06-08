@@ -84,6 +84,7 @@ function ProductPage() {
           <div className="mt-8"><DisclaimerPill /></div>
         </div>
       </div>
+      <ResearchFloatingPill />
     </section>
   );
 }
