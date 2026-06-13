@@ -21,10 +21,10 @@ export function Header() {
         🧪 Free tracked delivery on orders over £99 &nbsp;|&nbsp; Same-day dispatch before 2PM &nbsp;|&nbsp; All batches third-party verified
       </div>
       <div className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-3 sm:py-4 min-h-24 flex items-center justify-between gap-4">
-          <Link to="/" className="shrink-0 flex items-center py-1"><Logo height={64} /></Link>
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:py-5 min-h-28 flex items-center justify-between gap-4">
+          <Link to="/" className="shrink-0 flex items-center py-1"><Logo height={72} /></Link>
 
-          <nav className="hidden md:flex items-center gap-10 text-base font-bold">
+          <nav className="hidden md:flex items-center gap-12 text-2xl font-bold">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -37,30 +37,30 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 sm:gap-5">
+          <div className="flex items-center gap-4 sm:gap-6">
             <button aria-label="Search" className="p-2 text-foreground/70 hover:text-accent">
-              <Search size={20} />
+              <Search size={24} />
             </button>
             <Link to="/cart" className="relative p-2 text-foreground/70 hover:text-accent" aria-label="Cart">
-              <ShoppingCart size={20} />
+              <ShoppingCart size={24} />
               {itemCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] rounded-full bg-accent text-[10px] font-semibold flex items-center justify-center px-1" style={{ color: "var(--accent-foreground)" }}>
+                <span className="absolute -top-0.5 -right-0.5 min-w-[20px] h-[20px] rounded-full bg-accent text-[11px] font-semibold flex items-center justify-center px-1" style={{ color: "var(--accent-foreground)" }}>
                   {itemCount}
                 </span>
               )}
             </Link>
-            <Link to="/about" className="hidden sm:inline-flex items-center gap-1.5 text-base font-bold text-foreground/70 hover:text-accent">
-              <User size={18} /> My Account
+            <Link to="/about" className="hidden sm:inline-flex items-center gap-2 text-xl font-bold text-foreground/70 hover:text-accent">
+              <User size={20} /> My Account
             </Link>
             <button className="md:hidden p-2 text-foreground" onClick={() => setOpen((v) => !v)} aria-label="Menu">
-              {open ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
         {open && (
           <div className="md:hidden border-t border-border">
-            <nav className="flex flex-col px-4 py-4 gap-3 text-base font-bold">
+            <nav className="flex flex-col px-4 py-5 gap-4 text-xl font-bold">
               {nav.map((n) => (
                 <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-2 text-foreground/80 hover:text-accent">
                   {n.label}
