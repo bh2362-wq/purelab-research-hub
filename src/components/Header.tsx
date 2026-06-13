@@ -24,7 +24,7 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-4 py-3 sm:py-4 min-h-24 flex items-center justify-between gap-4">
           <Link to="/" className="shrink-0 flex items-center py-1"><Logo height={64} /></Link>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm">
+          <nav className="hidden md:flex items-center gap-10 text-base font-bold">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -37,30 +37,30 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-3 sm:gap-5">
             <button aria-label="Search" className="p-2 text-foreground/70 hover:text-accent">
-              <Search size={18} />
+              <Search size={20} />
             </button>
             <Link to="/cart" className="relative p-2 text-foreground/70 hover:text-accent" aria-label="Cart">
-              <ShoppingCart size={18} />
+              <ShoppingCart size={20} />
               {itemCount > 0 && (
                 <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] rounded-full bg-accent text-[10px] font-semibold flex items-center justify-center px-1" style={{ color: "var(--accent-foreground)" }}>
                   {itemCount}
                 </span>
               )}
             </Link>
-            <Link to="/about" className="hidden sm:inline-flex items-center gap-1.5 text-sm text-foreground/70 hover:text-accent">
-              <User size={16} /> My Account
+            <Link to="/about" className="hidden sm:inline-flex items-center gap-1.5 text-base font-bold text-foreground/70 hover:text-accent">
+              <User size={18} /> My Account
             </Link>
             <button className="md:hidden p-2 text-foreground" onClick={() => setOpen((v) => !v)} aria-label="Menu">
-              {open ? <X size={20} /> : <Menu size={20} />}
+              {open ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
         {open && (
           <div className="md:hidden border-t border-border">
-            <nav className="flex flex-col px-4 py-3 gap-2 text-sm">
+            <nav className="flex flex-col px-4 py-4 gap-3 text-base font-bold">
               {nav.map((n) => (
                 <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-2 text-foreground/80 hover:text-accent">
                   {n.label}
