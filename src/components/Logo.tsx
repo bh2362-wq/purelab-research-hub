@@ -1,7 +1,12 @@
-export function Logo({ className = "" }: { className?: string }) {
+import logoAsset from "@/assets/purelab-logo.png.asset.json";
+
+export function Logo({ className = "", height = 40 }: { className?: string; height?: number }) {
   return (
-    <span className={`font-display font-bold text-2xl tracking-tight text-foreground ${className}`}>
-      PureLab<sup className="text-accent text-xs ml-0.5 font-semibold">UK</sup>
-    </span>
+    <img
+      src={logoAsset.url}
+      alt="PureLab Peptides"
+      style={{ height }}
+      className={`w-auto object-contain ${className}`}
+    />
   );
 }
