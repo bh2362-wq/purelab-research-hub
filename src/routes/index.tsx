@@ -56,7 +56,7 @@ function Home() {
           </div>
           <div className="relative">
             <div className="rounded-3xl border border-border p-8 lg:p-10" style={{ background: "linear-gradient(160deg, #FFFFFF, #EAF1F7)" }}>
-              <div className="absolute inset-0 -z-0 blur-3xl opacity-20" style={{ background: "radial-gradient(circle, #00D4FF, transparent 60%)" }} />
+              <div className="absolute inset-0 -z-0 blur-3xl opacity-20" style={{ background: "radial-gradient(circle, #096AA1, transparent 60%)" }} />
               <div className="relative z-10"><Vial /></div>
             </div>
           </div>
