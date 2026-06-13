@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FlaskConical, FileCheck2, Heart } from "lucide-react";
 import type { Product } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
+import { getProductImage } from "@/lib/product-images";
 
 export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
