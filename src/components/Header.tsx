@@ -60,7 +60,7 @@ export function Header() {
 
         {open && (
           <div className="md:hidden border-t border-border">
-            <nav className="flex flex-col px-4 py-4 gap-3 text-base font-bold">
+            <nav className="flex flex-col px-4 py-5 gap-4 text-xl font-bold">
               {nav.map((n) => (
                 <Link key={n.to} to={n.to} onClick={() => setOpen(false)} className="py-2 text-foreground/80 hover:text-accent">
                   {n.label}
