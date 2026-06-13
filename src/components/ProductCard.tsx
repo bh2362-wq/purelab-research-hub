@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FlaskConical, FileCheck2, Heart } from "lucide-react";
 import type { Product } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
+import { getProductImage } from "@/lib/product-images";
 
 export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
@@ -11,18 +12,28 @@ export function ProductCard({ product }: { product: Product }) {
   );
   const [wished, setWished] = useState(false);
 
+  const img = getProductImage(product.slug);
+
   return (
     <div className="group flex flex-col rounded-2xl border bg-surface overflow-hidden hover:border-accent/40 transition-colors">
       <Link
         to="/product/$slug"
         params={{ slug: product.slug }}
-        className="relative aspect-square flex items-center justify-center"
-        style={{ background: "linear-gradient(160deg, #F5F8FB, #E8EEF4)" }}
+        className="relative aspect-square flex items-center justify-center bg-white"
       >
-        <span className="absolute top-3 left-3 z-10 inline-flex items-center rounded-full bg-white/70 backdrop-blur border border-border text-[10px] uppercase tracking-wider text-accent px-2.5 py-1">
+        <span className="absolute top-3 left-3 z-10 inline-flex items-center rounded-full bg-white/80 backdrop-blur border border-border text-[10px] uppercase tracking-wider text-accent px-2.5 py-1">
           {product.category.replace(" Research", "")}
         </span>
-        <FlaskConical size={88} className="text-accent/70 group-hover:scale-105 transition-transform" strokeWidth={1.25} />
+        {img ? (
+          <img
+            src={img}
+            alt={`${product.name} ${product.size} research bottle`}
+            className="h-full w-full object-contain p-4 group-hover:scale-105 transition-transform"
+            loading="lazy"
+          />
+        ) : (
+          <FlaskConical size={88} className="text-accent/70 group-hover:scale-105 transition-transform" strokeWidth={1.25} />
+        )}
       </Link>
 
       <div className="p-4 flex flex-col gap-2 flex-1">

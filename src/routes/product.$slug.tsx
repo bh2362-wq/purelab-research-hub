@@ -8,6 +8,7 @@ import { products, type Product, type SizeVariant } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
 import { ProductCard } from "@/components/ProductCard";
 import { ResearchFloatingPill } from "@/components/ResearchFloatingPill";
+import { getProductImage } from "@/lib/product-images";
 
 export const Route = createFileRoute("/product/$slug")({
   loader: ({ params }) => {
@@ -94,26 +95,40 @@ function ProductPage() {
           <div className="grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-14">
             {/* LEFT: gallery */}
             <div>
-              <div
-                className="relative rounded-3xl border aspect-square flex items-center justify-center overflow-hidden"
-                style={{ background: "linear-gradient(160deg, #F5F8FB, #E8EEF4)" }}
-              >
-                <div className="absolute inset-0 hex-pattern opacity-40" />
-                <FlaskConical
-                  size={240}
-                  strokeWidth={1.1}
-                  className="relative z-10 text-accent/80 drop-shadow-[0_30px_60px_rgba(0,212,255,0.35)]"
-                />
+              <div className="relative rounded-3xl border aspect-square flex items-center justify-center overflow-hidden bg-white">
+                {(() => {
+                  const img = getProductImage(product.slug);
+                  return img ? (
+                    <img
+                      src={img}
+                      alt={`${product.name} ${product.size} research bottle`}
+                      className="relative z-10 h-full w-full object-contain p-6"
+                    />
+                  ) : (
+                    <FlaskConical
+                      size={240}
+                      strokeWidth={1.1}
+                      className="relative z-10 text-accent/80 drop-shadow-[0_30px_60px_rgba(0,212,255,0.35)]"
+                    />
+                  );
+                })()}
               </div>
               <div className="mt-3 grid grid-cols-3 gap-3">
-                {[0, 1, 2].map((i) => (
-                  <button
-                    key={i}
-                    className="aspect-square rounded-xl border bg-surface hover:border-accent/50 transition flex items-center justify-center"
-                  >
-                    <FlaskConical size={36} className="text-accent/40" strokeWidth={1.25} />
-                  </button>
-                ))}
+                {[0, 1, 2].map((i) => {
+                  const img = getProductImage(product.slug);
+                  return (
+                    <button
+                      key={i}
+                      className="aspect-square rounded-xl border bg-white hover:border-accent/50 transition flex items-center justify-center overflow-hidden"
+                    >
+                      {img ? (
+                        <img src={img} alt="" className="h-full w-full object-contain p-2" />
+                      ) : (
+                        <FlaskConical size={36} className="text-accent/40" strokeWidth={1.25} />
+                      )}
+                    </button>
+                  );
+                })}
               </div>
               <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
                 <span className="text-xs text-muted-foreground">Batch: <span className="text-foreground">{batchRef}</span></span>
