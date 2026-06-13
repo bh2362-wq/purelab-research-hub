@@ -21,8 +21,8 @@ export function Header() {
         🧪 Free tracked delivery on orders over £99 &nbsp;|&nbsp; Same-day dispatch before 2PM &nbsp;|&nbsp; All batches third-party verified
       </div>
       <div className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between gap-4">
-          <Link to="/" className="shrink-0"><Logo /></Link>
+        <div className="mx-auto max-w-7xl px-4 h-20 flex items-center justify-between gap-4">
+          <Link to="/" className="shrink-0 flex items-center"><Logo height={72} /></Link>
 
           <nav className="hidden md:flex items-center gap-8 text-sm">
             {nav.map((n) => (
