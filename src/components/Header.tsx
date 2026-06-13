@@ -21,10 +21,10 @@ export function Header() {
         🧪 Free tracked delivery on orders over £99 &nbsp;|&nbsp; Same-day dispatch before 2PM &nbsp;|&nbsp; All batches third-party verified
       </div>
       <div className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-3 sm:py-4 min-h-24 flex items-center justify-between gap-4">
-          <Link to="/" className="shrink-0 flex items-center py-1"><Logo height={64} /></Link>
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:py-5 min-h-28 flex items-center justify-between gap-4">
+          <Link to="/" className="shrink-0 flex items-center py-1"><Logo height={72} /></Link>
 
-          <nav className="hidden md:flex items-center gap-10 text-base font-bold">
+          <nav className="hidden md:flex items-center gap-12 text-2xl font-bold">
             {nav.map((n) => (
               <Link
                 key={n.to}
