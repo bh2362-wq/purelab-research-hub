@@ -8,6 +8,7 @@ import { products, type Product, type SizeVariant } from "@/lib/products";
 import { useCart } from "@/lib/cart-context";
 import { ProductCard } from "@/components/ProductCard";
 import { ResearchFloatingPill } from "@/components/ResearchFloatingPill";
+import { getProductImage } from "@/lib/product-images";
 
 export const Route = createFileRoute("/product/$slug")({
   loader: ({ params }) => {
