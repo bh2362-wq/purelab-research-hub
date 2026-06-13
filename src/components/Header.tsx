@@ -37,23 +37,23 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3 sm:gap-5">
+          <div className="flex items-center gap-4 sm:gap-6">
             <button aria-label="Search" className="p-2 text-foreground/70 hover:text-accent">
-              <Search size={20} />
+              <Search size={24} />
             </button>
             <Link to="/cart" className="relative p-2 text-foreground/70 hover:text-accent" aria-label="Cart">
-              <ShoppingCart size={20} />
+              <ShoppingCart size={24} />
               {itemCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] rounded-full bg-accent text-[10px] font-semibold flex items-center justify-center px-1" style={{ color: "var(--accent-foreground)" }}>
+                <span className="absolute -top-0.5 -right-0.5 min-w-[20px] h-[20px] rounded-full bg-accent text-[11px] font-semibold flex items-center justify-center px-1" style={{ color: "var(--accent-foreground)" }}>
                   {itemCount}
                 </span>
               )}
             </Link>
-            <Link to="/about" className="hidden sm:inline-flex items-center gap-1.5 text-base font-bold text-foreground/70 hover:text-accent">
-              <User size={18} /> My Account
+            <Link to="/about" className="hidden sm:inline-flex items-center gap-2 text-xl font-bold text-foreground/70 hover:text-accent">
+              <User size={20} /> My Account
             </Link>
             <button className="md:hidden p-2 text-foreground" onClick={() => setOpen((v) => !v)} aria-label="Menu">
-              {open ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
